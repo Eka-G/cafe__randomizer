@@ -1,0 +1,9 @@
+$body-font-family: "Montserrat Alternates", sans-serif;
+$heading-font-family: "Montserrat Alternates", sans-serif;
+$font-size-root: 14px;
+
+@use 'vuetify' with (
+  $body-font-family: $body-font-family,
+  $heading-font-family: $heading-font-family,
+  $font-size-root: $font-size-root,
+)

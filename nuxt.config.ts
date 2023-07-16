@@ -1,9 +1,12 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
+  build: {
+    transpile: ['vuetify'],
+  },
   app: {
     head: {
-      title: "Cafe Randomizer",
+      title: "Cafe Random",
       htmlAttrs: {
         lang: "ru",
       },
@@ -11,27 +14,22 @@ export default defineNuxtConfig({
         { name: "description", content: "Приложение для случайного выбора кафе или ресторана." },
       ],
       link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       ],
     },
   },
-  css: ["@/assets/style/main.scss"],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: "@use '@/assets/style/_variables.scss' as *;"
-        }
-      }
-    }
-  },
+  css: [
+    "vuetify/lib/styles/main.sass",
+    "@/assets/style/variables.scss",
+    "@mdi/font/css/materialdesignicons.min.css",
+  ],
   modules: [
     "@nuxtjs/eslint-module",
-    "@nuxtjs/google-fonts"
+    "@nuxtjs/google-fonts",
   ],
   googleFonts: {
     families: {
       "Montserrat+Alternates": [300, 700],
     }
-  }
+  },
 })
