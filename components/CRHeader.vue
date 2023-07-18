@@ -4,9 +4,14 @@
     image="logo.svg"
     fixed
   >
-    <v-app-bar-title>Cafe Random</v-app-bar-title>
+    <v-app-bar-title class="font-weight-bold">
+      Cafe Random
+    </v-app-bar-title>
     
-    <v-btn icon>
+    <v-btn
+      href="#cafes"
+      icon
+    >
       <v-icon>
         mdi-rice
       </v-icon>
