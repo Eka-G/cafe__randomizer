@@ -23,7 +23,10 @@
       </v-tooltip>
     </v-btn>
 
-    <v-btn icon>
+    <v-btn
+      href="#randomizer"
+      icon
+    >
       <v-icon>
         mdi-dice-5
       </v-icon>
