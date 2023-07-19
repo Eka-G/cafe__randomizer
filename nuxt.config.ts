@@ -26,10 +26,16 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/eslint-module",
     "@nuxtjs/google-fonts",
+    '@pinia/nuxt',
   ],
   googleFonts: {
     families: {
       "Montserrat+Alternates": [300, 700],
     }
+  },
+  pinia: {
+    autoImports: [
+      ['defineStore', 'definePiniaStore'],
+    ],
   },
 })

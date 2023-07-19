@@ -4,9 +4,33 @@
       Список заведений
     </h2>
 
-    <v-row>
+    <v-row
+      v-if="store.error"
+      class="my-6"
+      justify="center"
+    >
+      <v-alert
+        type="warning"
+        title="Error!"
+        :text="store.error"
+      />
+    </v-row>
+
+    <v-row
+      v-if="store.loading"
+      class="my-6"
+      justify="center"
+    >
+      <v-progress-circular
+        :size="60"
+        color="amber"
+        indeterminate
+      />
+    </v-row>
+
+    <v-row v-else>
       <v-col
-        v-for="{ id, name, address, landmark, cuisine, distance, time, photo, business_lunch, price } in cafes"
+        v-for="{ id, name, address, landmark, cuisine, distance, time, photo, business_lunch, price } in store.cafes"
         :key="id"
         class="v-col-12 v-col-sm-6 v-col-lg-4 v-col-xl-3 v-col-xxl-2 d-flex justify-center"
       >
@@ -28,7 +52,7 @@
 </template>
 
 <script setup>
-  import base from "~/assets/data.json";
+  import { useStore } from "@/store";
 
-  const cafes = base.data;
+  const store = useStore();
 </script>

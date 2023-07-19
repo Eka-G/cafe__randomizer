@@ -6,3 +6,14 @@
     </v-container>
   </NuxtLayout>
 </template>
+
+<script setup>
+  import { onBeforeMount } from 'vue'
+  import { useStore } from "@/store";
+
+  const store = useStore();
+
+  onBeforeMount(() => {
+    store.getCafes();
+  })
+</script>
