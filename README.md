@@ -1,3 +1,8 @@
+👋 Hi, there! 
+This app can random generate cafe variant.
+
+Check deploy here: 👉 https://cafe-randomizer-sigma.vercel.app/
+
 ## Setup
 
 Make sure to install the dependencies:
